@@ -1,2 +1,2 @@
 # bytebank
-JS simple project about a digital bank
+Simple OO exercise in NodeJS.
