@@ -1,24 +1,27 @@
-import { Cliente } from "./Cliente.js";
-import { ContaCorrente } from "./ContaCorrente.js";
+import { Client } from "./src/Client.js";
+import { Account } from "./src/Account.js";
+import { CheckingAccount } from "./src/CheckingAccount.js";
+import { SavingAccount } from "./src/SavingAccount.js";
 
-const pedro = new Cliente("Pedro Nandi", "11122233304");
-const contaDoPedro = new ContaCorrente(1234, pedro);
+const pedro = new Client("Pedro Nandi", "11122233304");
+const PedrosAccount = new CheckingAccount(1234, pedro);
 
-contaDoPedro.depositar(500);
-const valorSacado = contaDoPedro.sacar(340);
+PedrosAccount.deposit(500);
+const amount = PedrosAccount.withdraw(340);
 
-console.log(contaDoPedro);
+console.log(PedrosAccount);
 
-const carol = new Cliente("Carolina Lucena", "44455566607");
+const carol = new Client("Carolina Lucena", "44455566607");
 
-const contaDaCarol = new ContaCorrente(3456, carol);
+const CarolsAccount = new SavingAccount(3456, carol, 700);
 
-contaDaCarol.depositar(700);
+console.log(CarolsAccount);
 
-console.log(contaDaCarol);
+CarolsAccount.transfer(100, PedrosAccount);
 
-contaDaCarol.transferir(100, contaDoPedro);
+console.log(CarolsAccount);
+console.log(PedrosAccount);
 
-console.log(contaDaCarol);
-console.log(contaDoPedro);
-console.log("Total de contas:", ContaCorrente.totalDeContas);
+console.log("Total of accounts:", Account.totalAccounts);
+console.log("Total of checking accounts:", CheckingAccount.totalCheckingAccounts);
+console.log("Total of saving accounts:", SavingAccount.totalSavingAccounts);
