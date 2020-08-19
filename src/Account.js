@@ -4,6 +4,10 @@ export class Account {
     static totalAccounts = 0;
 
     constructor(agency, client, balance, withdrawTax) {
+        if(this.constructor == Account) {
+            throw new Error("Abstract class: Can't be instanciated!");
+        }
+        
         this._agency = agency;
         this._id = (Account.totalAccounts + 1);
         this._client = client;
@@ -44,6 +48,10 @@ export class Account {
     transfer(amount, destinyAccount) {
         const amountWithdrawn = this.withdraw(amount);
         destinyAccount.deposit(amountWithdrawn);
+    }
+
+    accountType() {
+        throw new Error("This abstract method must by implemented by this nested class!");
     }
 
     get agency() {

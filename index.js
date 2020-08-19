@@ -25,3 +25,13 @@ console.log(PedrosAccount);
 console.log("Total of accounts:", Account.totalAccounts);
 console.log("Total of checking accounts:", CheckingAccount.totalCheckingAccounts);
 console.log("Total of saving accounts:", SavingAccount.totalSavingAccounts);
+
+PedrosAccount.accountType();
+
+/*
+Abstract class test:
+  const accountTest = new Account(1, pedro, 0, 1);
+
+Abstract method test:
+  CarolsAccount.accountType();  
+ */

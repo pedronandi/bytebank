@@ -9,4 +9,8 @@ export class CheckingAccount extends Account{
         
         CheckingAccount.totalCheckingAccounts++;
     }
+
+    accountType() {
+        console.log("This is a checking account!");
+    }
 }
