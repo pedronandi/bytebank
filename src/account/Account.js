@@ -1,4 +1,4 @@
-import { Client } from "./Client.js";
+import { Client } from "../Client.js";
 
 export class Account {
     static totalAccounts = 0;
@@ -51,7 +51,7 @@ export class Account {
     }
 
     accountType() {
-        throw new Error("This abstract method must by implemented by this nested class!");
+        throw new Error("This abstract method must by implemented only by a nested class!");
     }
 
     get agency() {

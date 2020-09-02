@@ -1,7 +1,8 @@
 export class Client {
-    constructor(fullName, ssn) {
+    constructor(fullName, ssn, password) {
         this._fullName = fullName;
         this._ssn = ssn;
+        this._password = password;
     }
 
     get fullName() {
@@ -11,4 +12,8 @@ export class Client {
     get ssn() {
         return this._ssn;
     }
+
+    /*authenticate(password) {
+        return this._password == password;
+    }*/
 }

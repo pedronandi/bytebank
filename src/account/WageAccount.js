@@ -1,4 +1,4 @@
-import { Client } from "./Client.js";
+import { Client } from "../Client.js.js";
 import { Account } from "./Account.js";
 
 export class WageAccount extends Account {
